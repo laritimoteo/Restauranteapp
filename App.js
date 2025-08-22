@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, ImageBackground, TouchableOpacity } from 'react-native';
-import OptionItem from './OptionItem'; // Importa o componente separado
+import {
+  StyleSheet,
+  Text,
+  View,
+  ImageBackground,
+  TouchableOpacity,
+  Image,
+} from 'react-native';
+import OptionItem from './OptionItem';
 
 export default function App() {
-  const [showOptions, setShowOptions] = useState(false);
-
-  const toggleOptions = () => setShowOptions(!showOptions);
+  const [currentScreen, setCurrentScreen] = useState('start');
 
   const icons = {
     1: require('./assets/images/1.png'),
@@ -16,7 +21,8 @@ export default function App() {
 
   return (
     <>
-      {!showOptions ? (
+      {/* Tela 1: Tela inicial com imagem de prato */}
+      {currentScreen === 'start' && (
         <ImageBackground
           source={require('./assets/images/prato.png')}
           style={styles.background}
@@ -26,18 +32,67 @@ export default function App() {
             <View style={styles.textContainer}>
               <Text style={styles.title}>SENÍLIA</Text>
               <Text style={styles.subtitle}>Alta Gastronomia</Text>
+              <TouchableOpacity
+                style={styles.button}
+                onPress={() => setCurrentScreen('intro')}
+              >
+                <Text style={styles.buttonText}>Começar</Text>
+              </TouchableOpacity>
             </View>
-            <TouchableOpacity style={styles.button} onPress={toggleOptions}>
-              <Text style={styles.buttonText}>Começar</Text>
-            </TouchableOpacity>
           </View>
         </ImageBackground>
-      ) : (
-        <ImageBackground
-          source={require('./assets/images/fundo1.png')}
-          style={styles.background}
-          resizeMode="cover"
-        >
+      )}
+
+      {/* Tela 2: Boas-vindas e login */}
+      {currentScreen === 'intro' && (
+        <View style={styles.introContainer}>
+          <TouchableOpacity
+            onPress={() => setCurrentScreen('start')}
+            style={styles.backArrow}
+          >
+            <Text style={styles.backArrowText}>←</Text>
+          </TouchableOpacity>
+
+          <Image
+            source={require('./assets/images/logo.png')} // Seu logo local
+            style={styles.logo}
+            resizeMode="contain"
+          />
+
+          <Text style={styles.brand}>SENÍLIA</Text>
+          <Text style={styles.introTitle}>Alta Gastronomia</Text>
+          <Text style={styles.introDesc}>
+            Onde o fogo e a culinária se encontram em pratos inspiradores
+          </Text>
+
+          <TouchableOpacity style={styles.greenButton}>
+            <Text style={styles.greenButtonText}>Quero me cadastrar</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.appleButton}>
+            <Image
+              source={{
+                uri: 'https://cdn-icons-png.flaticon.com/128/2/2235.png',
+              }}
+              style={styles.appleIcon}
+              resizeMode="contain"
+            />
+            <Text style={styles.appleButtonText}>Continuar com a Apple</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.greenButton}>
+            <Text style={styles.greenButtonText}>Já sou cadastrado</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={() => setCurrentScreen('options')}>
+            <Text style={styles.link}>Permanecer desconectado</Text>
+          </TouchableOpacity>
+        </View>
+      )}
+
+      {/* Tela 3: Opções do app */}
+      {currentScreen === 'options' && (
+        <View style={[styles.background, { backgroundColor: '#8fa7a3' }]}>
           <View style={styles.optionsContainer}>
             <Text style={styles.titleOptions}>Como você quer usar o app?</Text>
 
@@ -62,11 +117,14 @@ export default function App() {
               subtitle="Quero usar o app para ver meus cupons e benefícios"
             />
 
-            <TouchableOpacity style={styles.backButton} onPress={toggleOptions}>
+            <TouchableOpacity
+              style={styles.backButton}
+              onPress={() => setCurrentScreen('intro')}
+            >
               <Text style={styles.optionText}>Voltar</Text>
             </TouchableOpacity>
           </View>
-        </ImageBackground>
+        </View>
       )}
     </>
   );
@@ -75,47 +133,141 @@ export default function App() {
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    justifyContent: 'flex-end',
   },
   overlay: {
-    padding: 20,
-    backgroundColor: 'rgba(0,0,0,0.3)',
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'flex-end',
   },
   textContainer: {
-    marginBottom: 20,
+    paddingHorizontal: 20,
+    paddingBottom: 40,
   },
   title: {
     color: '#fff',
-    fontSize: 24,
+    fontSize: 26,
     fontWeight: 'bold',
-    textAlign: 'center',
+    textAlign: 'left',
+    fontFamily: 'serif',
+    textShadowColor: 'rgba(0, 0, 0, 0.7)',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 3,
   },
   subtitle: {
-    color: '#fff',
-    fontSize: 16,
+    color: '#000',
+    fontSize: 18,
     fontFamily: 'serif',
-    textAlign: 'center',
+    textAlign: 'left',
+    marginBottom: 25,
   },
   button: {
     backgroundColor: '#dcd4b6',
-    paddingVertical: 12,
+    paddingVertical: 14,
     borderRadius: 25,
     alignItems: 'center',
-    marginTop: 20,
   },
   buttonText: {
-    fontSize: 16,
+    fontSize: 18,
     color: '#000',
     fontWeight: 'bold',
     fontFamily: 'serif',
-    
   },
+
+  // Tela 2
+  introContainer: {
+    flex: 1,
+    backgroundColor: '#edf2ed',
+    paddingHorizontal: 35,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  backArrow: {
+    position: 'absolute',
+    top: 50,
+    left: 25,
+  },
+  backArrowText: {
+    fontSize: 28,
+    color: '#000',
+    fontWeight: 'bold',
+  },
+  logo: {
+    width: 200,
+    height: 200,
+    marginBottom: 25,
+  },
+  brand: {
+    color: '#65908d',
+    fontSize: 22,
+    fontWeight: 'bold',
+    fontFamily: 'serif',
+    marginBottom: 4,
+    letterSpacing: 1,
+  },
+  introTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    fontFamily: 'serif',
+    color: '#000',
+    marginBottom: 12,
+  },
+  introDesc: {
+    textAlign: 'center',
+    fontSize: 15,
+    color: '#000',
+    marginBottom: 20,
+    fontFamily: 'serif',
+    paddingHorizontal: 10,
+  },
+  greenButton: {
+    backgroundColor: '#65908d',
+    paddingVertical: 13,
+    borderRadius: 22,
+    width: '100%',
+    alignItems: 'center',
+    marginVertical: 6,
+  },
+  greenButtonText: {
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: 16,
+    fontFamily: 'serif',
+  },
+  appleButton: {
+    flexDirection: 'row',
+    backgroundColor: '#b8853f',
+    paddingVertical: 13,
+    borderRadius: 22,
+    width: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginVertical: 6,
+  },
+  appleIcon: {
+    width: 24,
+    height: 24,
+    marginRight: 10,
+  },
+  appleButtonText: {
+    color: '#000',
+    fontWeight: 'bold',
+    fontSize: 16,
+    fontFamily: 'serif',
+  },
+  link: {
+    marginTop: 18,
+    color: '#000',
+    textDecorationLine: 'underline',
+    fontStyle: 'italic',
+    fontSize: 14,
+  },
+
+  // Tela 3
   optionsContainer: {
-    flex: 1,  
+    flex: 1,
     padding: 30,
     justifyContent: 'center',
+    
+    
   },
   titleOptions: {
     color: '#000',
@@ -123,7 +275,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     marginBottom: 30,
-    fontFamily: 'serif',  
+    fontFamily: 'serif',
   },
   backButton: {
     backgroundColor: '#f0f0f0',
@@ -131,11 +283,9 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     alignItems: 'center',
     marginTop: 10,
-    
   },
   optionText: {
     fontSize: 16,
     color: '#000',
-    
   },
 });
