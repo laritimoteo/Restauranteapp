@@ -12,9 +12,7 @@ import OptionItem from './OptionItem';
 export default function App() {
     const [currentScreen, setCurrentScreen] = useState('start');
     const [selectedCategory, setSelectedCategory] = useState('Recomendados');
-    const [selectedDish, setSelectedDish] = useState(null); // prato selecionado para modal
-    const [modalVisible, setModalVisible] = useState(false);
-    
+  
   const icons = {
     1: require('./assets/images/1.png'),
     2: require('./assets/images/2.png'),

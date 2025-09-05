@@ -1,16 +1,22 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  TouchableOpacity,
+} from 'react-native';
 
-export default function OptionItem({ icon, title, subtitle }) {
+export default function OptionItem({ icon, title, subtitle, onPress }) {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity onPress={onPress} style={styles.container}>
       <Image source={icon} style={styles.icon} />
       <View style={styles.textContainer}>
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.subtitle}>{subtitle}</Text>
       </View>
-      <Text style={styles.arrow}>➔</Text>  {/* Seta simples, pode trocar por imagem */}
-    </View>
+      <Text style={styles.arrow}>➔</Text>
+    </TouchableOpacity>
   );
 }
 
@@ -22,7 +28,6 @@ const styles = StyleSheet.create({
     padding: 15,
     marginBottom: 15,
     borderRadius: 10,
-    
   },
   icon: {
     width: 50,
@@ -31,7 +36,6 @@ const styles = StyleSheet.create({
   },
   textContainer: {
     flex: 1,
-    
   },
   title: {
     fontSize: 18,
@@ -43,6 +47,6 @@ const styles = StyleSheet.create({
   },
   arrow: {
     fontSize: 24,
-    color: '#7ba49f',  // cor padrão da seta
+    color: '#7ba49f',
   },
 });
