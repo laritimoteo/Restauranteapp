@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { ScrollView } from 'react-native';
 import {
   StyleSheet,
   Text,
@@ -240,47 +241,186 @@ export default function App() {
     </View>
 
 
-    {/* Lista dos pratos */}
-    <View style={styles.dishList}>
-      {/* Prato 1 */}
-      <View style={styles.dishItem}>
-        <Image
-          source={require('./assets/images/LagostaArroz.png')}
-          style={styles.dishImage}
-          resizeMode="cover"
-        />
-        <View style={styles.dishInfo}>
-          <Text style={styles.dishTitle}>Lagosta com Arroz</Text>
-          <Text style={styles.dishDescription}>
-            Lagosta grelhada com alho na manteiga, servida sobre arroz cremoso ...
-          </Text>
-          <Text style={styles.dishPrice}>R$ 197,00</Text>
+{/* Lista dos pratos */}
+<ScrollView style={styles.dishList} showsVerticalScrollIndicator={false}>
+  {/* Prato 1 */}
+  <View style={styles.dishItem}>
+    <Image source={require('./assets/images/LagostaArroz.png')} style={styles.dishImage} />
+    <View style={styles.dishInfo}>
+      <Text style={styles.dishTitle}>Lagosta com Arroz</Text>
+      <Text style={styles.dishDescription}>
+        Lagosta grelhada com alho na manteiga, servida sobre arroz cremoso ...
+      </Text>
+      <Text style={styles.dishPrice}>R$ 197,00</Text>
+      <View style={styles.actionsRow}>
+        <View style={styles.buttonAndCart}>
           <TouchableOpacity style={styles.dishButton}>
-            
             <Text style={styles.dishButtonText}>Até 6 pessoas</Text>
           </TouchableOpacity>
-        </View>
-      </View>
-
-      {/* Prato 2 */}
-      <View style={styles.dishItem}>
-        <Image
-          source={require('./assets/images/SaladaSalmão.png')}
-          style={styles.dishImage}
-          resizeMode="cover"
-        />
-        <View style={styles.dishInfo}>
-          <Text style={styles.dishTitle}>Salada Com Salmão</Text>
-          <Text style={styles.dishDescription}>
-            Ceviche de salmão, alface americana, alface crespa, alface roxa, rúcula, azeitonas...
-          </Text>
-          <Text style={styles.dishPrice}>R$ 38,00</Text>
-          <TouchableOpacity style={styles.dishButton}>
-            <Text style={styles.dishButtonText}>Até 1 pessoa</Text>
+          <TouchableOpacity>
+            <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
           </TouchableOpacity>
         </View>
       </View>
     </View>
+  </View>
+
+  {/* Prato 2 */}
+  <View style={styles.dishItem}>
+    <Image source={require('./assets/images/SaladaSalmão.png')} style={styles.dishImage} />
+    <View style={styles.dishInfo}>
+      <Text style={styles.dishTitle}>Salada Com Salmão</Text>
+      <Text style={styles.dishDescription}>
+        Ceviche de salmão, alface americana, alface crespa, alface roxa, rúcula, azeitonas...
+      </Text>
+      <Text style={styles.dishPrice}>R$ 38,00</Text>
+      <View style={styles.actionsRow}>
+        <View style={styles.buttonAndCart}>
+          <TouchableOpacity style={styles.dishButton}>
+            <Text style={styles.dishButtonText}>Até 1 pessoa</Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
+          </TouchableOpacity>
+        </View>
+      </View>
+    </View>
+  </View>
+
+  {/* Prato 3 */}
+  <View style={styles.dishItem}>
+    <Image source={require('./assets/images/r1.png')} style={styles.dishImage} />
+    <View style={styles.dishInfo}>
+      <Text style={styles.dishTitle}>Polpo alla Griglia</Text>
+      <Text style={styles.dishDescription}>
+        Polvo grelhado no azeite de ervas finas, servido com batatas ao alecrim.
+      </Text>
+      <Text style={styles.dishPrice}>R$ 160,00</Text>
+      <View style={styles.actionsRow}>
+        <View style={styles.buttonAndCart}>
+          <TouchableOpacity style={styles.dishButton}>
+            <Text style={styles.dishButtonText}>Até 2 pessoas</Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
+          </TouchableOpacity>
+        </View>
+      </View>
+    </View>
+  </View>
+
+  {/* Prato 4 */}
+  <View style={styles.dishItem}>
+    <Image source={require('./assets/images/r2.png')} style={styles.dishImage} />
+    <View style={styles.dishInfo}>
+      <Text style={styles.dishTitle}>Gnocchi al Tartufo Bianco</Text>
+      <Text style={styles.dishDescription}>
+        Nhoque artesanal com creme de parmesão e lascas de trufa branca.
+      </Text>
+      <Text style={styles.dishPrice}>R$ 120,00</Text>
+      <View style={styles.actionsRow}>
+        <View style={styles.buttonAndCart}>
+          <TouchableOpacity style={styles.dishButton}>
+            <Text style={styles.dishButtonText}>Até 2 pessoas</Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
+          </TouchableOpacity>
+        </View>
+      </View>
+    </View>
+  </View>
+
+  {/* Prato 5 */}
+  <View style={styles.dishItem}>
+    <Image source={require('./assets/images/r3.png')} style={styles.dishImage} />
+    <View style={styles.dishInfo}>
+      <Text style={styles.dishTitle}>Lagosta Mediterrânea</Text>
+      <Text style={styles.dishDescription}>
+        Lagosta grelhada na manteiga de ervas, servida com risoto de limão siciliano e toque de açafrão.
+      </Text>
+      <Text style={styles.dishPrice}>R$ 210,00</Text>
+      <View style={styles.actionsRow}>
+        <View style={styles.buttonAndCart}>
+          <TouchableOpacity style={styles.dishButton}>
+            <Text style={styles.dishButtonText}>Até 2 pessoas</Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
+          </TouchableOpacity>
+        </View>
+      </View>
+    </View>
+  </View>
+
+  {/* Prato 6 */}
+  <View style={styles.dishItem}>
+    <Image source={require('./assets/images/r4.png')} style={styles.dishImage} />
+    <View style={styles.dishInfo}>
+      <Text style={styles.dishTitle}>Spaghetti ai Frutti di Mare</Text>
+      <Text style={styles.dishDescription}>
+        Espaguete fresco com frutos do mar salteados em azeite e tomate cereja.
+      </Text>
+      <Text style={styles.dishPrice}>R$ 145,00</Text>
+      <View style={styles.actionsRow}>
+        <View style={styles.buttonAndCart}>
+          <TouchableOpacity style={styles.dishButton}>
+            <Text style={styles.dishButtonText}>Até 3 pessoas</Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
+          </TouchableOpacity>
+        </View>
+      </View>
+    </View>
+  </View>
+
+  {/* Prato 7 */}
+  <View style={styles.dishItem}>
+    <Image source={require('./assets/images/r5.png')} style={styles.dishImage} />
+    <View style={styles.dishInfo}>
+      <Text style={styles.dishTitle}>Insalata Caprese Moderna</Text>
+      <Text style={styles.dishDescription}>
+        Mussarela de búfala, tomate confitado e pesto de manjericão com toque de balsâmico.
+      </Text>
+      <Text style={styles.dishPrice}>R$ 70,00</Text>
+      <View style={styles.actionsRow}>
+        <View style={styles.buttonAndCart}>
+          <TouchableOpacity style={styles.dishButton}>
+            <Text style={styles.dishButtonText}>Até 1 pessoa</Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
+          </TouchableOpacity>
+        </View>
+      </View>
+    </View>
+  </View>
+
+  {/* Prato 8 */}
+  <View style={styles.dishItem}>
+    <Image source={require('./assets/images/r6.png')} style={styles.dishImage} />
+    <View style={styles.dishInfo}>
+      <Text style={styles.dishTitle}>Tonno in Crosta di Pistacchi</Text>
+      <Text style={styles.dishDescription}>
+        Atum selado em crosta de pistache, acompanhado de creme de limão siciliano.
+      </Text>
+      <Text style={styles.dishPrice}>R$ 185,00</Text>
+      <View style={styles.actionsRow}>
+        <View style={styles.buttonAndCart}>
+          <TouchableOpacity style={styles.dishButton}>
+            <Text style={styles.dishButtonText}>Até 2 pessoas</Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
+          </TouchableOpacity>
+        </View>
+      </View>
+    </View>
+  </View>
+</ScrollView>
+
+
     
      {/* MENU INFERIOR FIXO */}
      <View style={styles.bottomTab}>
@@ -758,5 +898,35 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 12,
   },
+  actionsRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginTop: 8,
+  },
+  
+  dishButton: {
+    backgroundColor: '#333',
+    paddingVertical: 6,
+    paddingHorizontal: 12,
+    borderRadius: 8,
+  },
+  
+  dishButton: {
+    backgroundColor: '#809a97', // cor da imagem
+    paddingVertical: 6,
+    paddingHorizontal: 12,
+    borderRadius: 8,
+  },
+  
+  
+  // carrinho icon
+  cartIconLarge: {
+    width: 26,
+    height: 26,
+    resizeMode: 'contain',
+    marginLeft: 8,
+  },
+  
   
 });
