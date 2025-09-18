@@ -240,186 +240,687 @@ export default function App() {
       ))}
     </View>
 
-
 {/* Lista dos pratos */}
 <ScrollView style={styles.dishList} showsVerticalScrollIndicator={false}>
-  {/* Prato 1 */}
-  <View style={styles.dishItem}>
-    <Image source={require('./assets/images/LagostaArroz.png')} style={styles.dishImage} />
-    <View style={styles.dishInfo}>
-      <Text style={styles.dishTitle}>Lagosta com Arroz</Text>
-      <Text style={styles.dishDescription}>
-        Lagosta grelhada com alho na manteiga, servida sobre arroz cremoso ...
-      </Text>
-      <Text style={styles.dishPrice}>R$ 197,00</Text>
-      <View style={styles.actionsRow}>
-        <View style={styles.buttonAndCart}>
-          <TouchableOpacity style={styles.dishButton}>
-            <Text style={styles.dishButtonText}>Até 6 pessoas</Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
-          </TouchableOpacity>
+  {selectedCategory === 'Recomendados' && (
+    <>
+      {/* Prato 1 */}
+      <View style={styles.dishItem}>
+        <Image source={require('./assets/images/LagostaArroz.png')} style={styles.dishImage} />
+        <View style={styles.dishInfo}>
+          <Text style={styles.dishTitle}>Lagosta com Arroz</Text>
+          <Text style={styles.dishDescription}>
+            Lagosta grelhada com alho na manteiga, servida sobre arroz cremoso.
+          </Text>
+          <Text style={styles.dishPrice}>R$ 197,00</Text>
+          <View style={styles.actionsRow}>
+            <View style={styles.buttonAndCart}>
+              <TouchableOpacity style={styles.dishButton}>
+                <Text style={styles.dishButtonText}>Até 6 pessoas</Text>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
+              </TouchableOpacity>
+            </View>
+          </View>
         </View>
       </View>
-    </View>
-  </View>
 
-  {/* Prato 2 */}
-  <View style={styles.dishItem}>
-    <Image source={require('./assets/images/SaladaSalmão.png')} style={styles.dishImage} />
-    <View style={styles.dishInfo}>
-      <Text style={styles.dishTitle}>Salada Com Salmão</Text>
-      <Text style={styles.dishDescription}>
-        Ceviche de salmão, alface americana, alface crespa, alface roxa, rúcula, azeitonas...
-      </Text>
-      <Text style={styles.dishPrice}>R$ 38,00</Text>
-      <View style={styles.actionsRow}>
-        <View style={styles.buttonAndCart}>
-          <TouchableOpacity style={styles.dishButton}>
-            <Text style={styles.dishButtonText}>Até 1 pessoa</Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
-          </TouchableOpacity>
+      {/* Prato 2 */}
+      <View style={styles.dishItem}>
+        <Image source={require('./assets/images/r2.png')} style={styles.dishImage} />
+        <View style={styles.dishInfo}>
+          <Text style={styles.dishTitle}>Camarão Imperial</Text>
+          <Text style={styles.dishDescription}>
+            Camarões grelhados no azeite de ervas com purê de batata-doce e farofa crocante.
+          </Text>
+          <Text style={styles.dishPrice}>R$ 158,00</Text>
+          <View style={styles.actionsRow}>
+            <View style={styles.buttonAndCart}>
+              <TouchableOpacity style={styles.dishButton}>
+                <Text style={styles.dishButtonText}>Até 4 pessoas</Text>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
+              </TouchableOpacity>
+            </View>
+          </View>
         </View>
       </View>
-    </View>
-  </View>
 
-  {/* Prato 3 */}
-  <View style={styles.dishItem}>
-    <Image source={require('./assets/images/r1.png')} style={styles.dishImage} />
-    <View style={styles.dishInfo}>
-      <Text style={styles.dishTitle}>Polpo alla Griglia</Text>
-      <Text style={styles.dishDescription}>
-        Polvo grelhado no azeite de ervas finas, servido com batatas ao alecrim.
-      </Text>
-      <Text style={styles.dishPrice}>R$ 160,00</Text>
-      <View style={styles.actionsRow}>
-        <View style={styles.buttonAndCart}>
-          <TouchableOpacity style={styles.dishButton}>
-            <Text style={styles.dishButtonText}>Até 2 pessoas</Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
-          </TouchableOpacity>
+      {/* Prato 3 */}
+      <View style={styles.dishItem}>
+        <Image source={require('./assets/images/r3.png')} style={styles.dishImage} />
+        <View style={styles.dishInfo}>
+          <Text style={styles.dishTitle}>Polvo Mediterrâneo</Text>
+          <Text style={styles.dishDescription}>
+            Polvo grelhado ao molho de vinho branco com batatas rústicas e azeite trufado.
+          </Text>
+          <Text style={styles.dishPrice}>R$ 174,00</Text>
+          <View style={styles.actionsRow}>
+            <View style={styles.buttonAndCart}>
+              <TouchableOpacity style={styles.dishButton}>
+                <Text style={styles.dishButtonText}>Até 3 pessoas</Text>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
+              </TouchableOpacity>
+            </View>
+          </View>
         </View>
       </View>
-    </View>
-  </View>
 
-  {/* Prato 4 */}
-  <View style={styles.dishItem}>
-    <Image source={require('./assets/images/r2.png')} style={styles.dishImage} />
-    <View style={styles.dishInfo}>
-      <Text style={styles.dishTitle}>Gnocchi al Tartufo Bianco</Text>
-      <Text style={styles.dishDescription}>
-        Nhoque artesanal com creme de parmesão e lascas de trufa branca.
-      </Text>
-      <Text style={styles.dishPrice}>R$ 120,00</Text>
-      <View style={styles.actionsRow}>
-        <View style={styles.buttonAndCart}>
-          <TouchableOpacity style={styles.dishButton}>
-            <Text style={styles.dishButtonText}>Até 2 pessoas</Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
-          </TouchableOpacity>
+      {/* Prato 4 */}
+      <View style={styles.dishItem}>
+        <Image source={require('./assets/images/r4.png')} style={styles.dishImage} />
+        <View style={styles.dishInfo}>
+          <Text style={styles.dishTitle}>Risotto Nero</Text>
+          <Text style={styles.dishDescription}>
+            Risoto cremoso de tinta de lula com polvo grelhado e azeite siciliano.
+          </Text>
+          <Text style={styles.dishPrice}>R$ 142,00</Text>
+          <View style={styles.actionsRow}>
+            <View style={styles.buttonAndCart}>
+              <TouchableOpacity style={styles.dishButton}>
+                <Text style={styles.dishButtonText}>Até 2 pessoas</Text>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
+              </TouchableOpacity>
+            </View>
+          </View>
         </View>
       </View>
-    </View>
-  </View>
 
-  {/* Prato 5 */}
-  <View style={styles.dishItem}>
-    <Image source={require('./assets/images/r3.png')} style={styles.dishImage} />
-    <View style={styles.dishInfo}>
-      <Text style={styles.dishTitle}>Lagosta Mediterrânea</Text>
-      <Text style={styles.dishDescription}>
-        Lagosta grelhada na manteiga de ervas, servida com risoto de limão siciliano e toque de açafrão.
-      </Text>
-      <Text style={styles.dishPrice}>R$ 210,00</Text>
-      <View style={styles.actionsRow}>
-        <View style={styles.buttonAndCart}>
-          <TouchableOpacity style={styles.dishButton}>
-            <Text style={styles.dishButtonText}>Até 2 pessoas</Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
-          </TouchableOpacity>
+      {/* Prato 5 */}
+      <View style={styles.dishItem}>
+        <Image source={require('./assets/images/r5.png')} style={styles.dishImage} />
+        <View style={styles.dishInfo}>
+          <Text style={styles.dishTitle}>Salmão Siciliano</Text>
+          <Text style={styles.dishDescription}>
+            Salmão grelhado com molho cítrico de limão siciliano e legumes frescos.
+          </Text>
+          <Text style={styles.dishPrice}>R$ 139,00</Text>
+          <View style={styles.actionsRow}>
+            <View style={styles.buttonAndCart}>
+              <TouchableOpacity style={styles.dishButton}>
+                <Text style={styles.dishButtonText}>Até 2 pessoas</Text>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
+              </TouchableOpacity>
+            </View>
+          </View>
         </View>
       </View>
-    </View>
-  </View>
 
-  {/* Prato 6 */}
-  <View style={styles.dishItem}>
-    <Image source={require('./assets/images/r4.png')} style={styles.dishImage} />
-    <View style={styles.dishInfo}>
-      <Text style={styles.dishTitle}>Spaghetti ai Frutti di Mare</Text>
-      <Text style={styles.dishDescription}>
-        Espaguete fresco com frutos do mar salteados em azeite e tomate cereja.
-      </Text>
-      <Text style={styles.dishPrice}>R$ 145,00</Text>
-      <View style={styles.actionsRow}>
-        <View style={styles.buttonAndCart}>
-          <TouchableOpacity style={styles.dishButton}>
-            <Text style={styles.dishButtonText}>Até 3 pessoas</Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
-          </TouchableOpacity>
+      {/* Prato 6 */}
+      <View style={styles.dishItem}>
+        <Image source={require('./assets/images/r6.png')} style={styles.dishImage} />
+        <View style={styles.dishInfo}>
+          <Text style={styles.dishTitle}>Tonno in Crosta di Pistacchi</Text>
+          <Text style={styles.dishDescription}>
+            Atum selado em crosta de pistache, acompanhado de creme de limão siciliano.
+          </Text>
+          <Text style={styles.dishPrice}>R$ 185,00</Text>
+          <View style={styles.actionsRow}>
+            <View style={styles.buttonAndCart}>
+              <TouchableOpacity style={styles.dishButton}>
+                <Text style={styles.dishButtonText}>Até 2 pessoas</Text>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
+              </TouchableOpacity>
+            </View>
+          </View>
         </View>
       </View>
-    </View>
-  </View>
+    </>
+  )}
 
-  {/* Prato 7 */}
-  <View style={styles.dishItem}>
-    <Image source={require('./assets/images/r5.png')} style={styles.dishImage} />
-    <View style={styles.dishInfo}>
-      <Text style={styles.dishTitle}>Insalata Caprese Moderna</Text>
-      <Text style={styles.dishDescription}>
-        Mussarela de búfala, tomate confitado e pesto de manjericão com toque de balsâmico.
-      </Text>
-      <Text style={styles.dishPrice}>R$ 70,00</Text>
-      <View style={styles.actionsRow}>
-        <View style={styles.buttonAndCart}>
-          <TouchableOpacity style={styles.dishButton}>
-            <Text style={styles.dishButtonText}>Até 1 pessoa</Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
-          </TouchableOpacity>
+{selectedCategory === 'Entradas' && (
+  <>
+    {/* Entrada 1 */}
+    <View style={styles.dishItem}>
+      <Image source={require('./assets/images/e1.jpg')} style={styles.dishImage} />
+      <View style={styles.dishInfo}>
+        <Text style={styles.dishTitle}>Tartar di Mare Fresco</Text>
+        <Text style={styles.dishDescription}>
+          Tartar de atum fresco com guacamole e crocante de gergelim.
+        </Text>
+        <Text style={styles.dishPrice}>R$ 68,00</Text>
+        <View style={styles.actionsRow}>
+          <View style={styles.buttonAndCart}>
+            <TouchableOpacity style={styles.dishButton}>
+              <Text style={styles.dishButtonText}>Até 1 pessoa</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     </View>
-  </View>
 
-  {/* Prato 8 */}
-  <View style={styles.dishItem}>
-    <Image source={require('./assets/images/r6.png')} style={styles.dishImage} />
-    <View style={styles.dishInfo}>
-      <Text style={styles.dishTitle}>Tonno in Crosta di Pistacchi</Text>
-      <Text style={styles.dishDescription}>
-        Atum selado em crosta de pistache, acompanhado de creme de limão siciliano.
-      </Text>
-      <Text style={styles.dishPrice}>R$ 185,00</Text>
-      <View style={styles.actionsRow}>
-        <View style={styles.buttonAndCart}>
-          <TouchableOpacity style={styles.dishButton}>
-            <Text style={styles.dishButtonText}>Até 2 pessoas</Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
-          </TouchableOpacity>
+    {/* Entrada 2 */}
+    <View style={styles.dishItem}>
+      <Image source={require('./assets/images/e2.jpg')} style={styles.dishImage} />
+      <View style={styles.dishInfo}>
+        <Text style={styles.dishTitle}>Bruschetta alla Truffle</Text>
+        <Text style={styles.dishDescription}>
+          Pão rústico com tomates frescos, manjericão e azeite trufado.
+        </Text>
+        <Text style={styles.dishPrice}>R$ 42,00</Text>
+        <View style={styles.actionsRow}>
+          <View style={styles.buttonAndCart}>
+            <TouchableOpacity style={styles.dishButton}>
+              <Text style={styles.dishButtonText}>Até 1 pessoa</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     </View>
-  </View>
+
+    {/* Entrada 3 */}
+    <View style={styles.dishItem}>
+      <Image source={require('./assets/images/e3.jpg')} style={styles.dishImage} />
+      <View style={styles.dishInfo}>
+        <Text style={styles.dishTitle}>Risotto di Funghi Selvatici</Text>
+        <Text style={styles.dishDescription}>
+          Risoto de cogumelos selvagens e queijo parmesão, leve toque de trufas.
+        </Text>
+        <Text style={styles.dishPrice}>R$ 89,00</Text>
+        <View style={styles.actionsRow}>
+          <View style={styles.buttonAndCart}>
+            <TouchableOpacity style={styles.dishButton}>
+              <Text style={styles.dishButtonText}>Até 2 pessoas</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
+    </View>
+
+    {/* Entrada 4 */}
+    <View style={styles.dishItem}>
+      <Image source={require('./assets/images/e4.jpg')} style={styles.dishImage} />
+      <View style={styles.dishInfo}>
+        <Text style={styles.dishTitle}>Ravioli della Campagna</Text>
+        <Text style={styles.dishDescription}>
+          Ravioli recheado com ricota e espinafre, servido com molho de tomate e manjericão.
+        </Text>
+        <Text style={styles.dishPrice}>R$ 75,00</Text>
+        <View style={styles.actionsRow}>
+          <View style={styles.buttonAndCart}>
+            <TouchableOpacity style={styles.dishButton}>
+              <Text style={styles.dishButtonText}>Até 2 pessoas</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
+    </View>
+
+    {/* Entrada 5 */}
+    <View style={styles.dishItem}>
+      <Image source={require('./assets/images/e5.jpg')} style={styles.dishImage} />
+      <View style={styles.dishInfo}>
+        <Text style={styles.dishTitle}>Carpaccio di Manzo</Text>
+        <Text style={styles.dishDescription}>
+          Finas fatias de carne bovina, azeite trufado, lascas de parmesão e rúcula.
+        </Text>
+        <Text style={styles.dishPrice}>R$ 92,00</Text>
+        <View style={styles.actionsRow}>
+          <View style={styles.buttonAndCart}>
+            <TouchableOpacity style={styles.dishButton}>
+              <Text style={styles.dishButtonText}>Até 2 pessoas</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
+    </View>
+
+    {/* Entrada 6 */}
+    <View style={styles.dishItem}>
+      <Image source={require('./assets/images/e6.jpg')} style={styles.dishImage} />
+      <View style={styles.dishInfo}>
+        <Text style={styles.dishTitle}>Crema di Zucca</Text>
+        <Text style={styles.dishDescription}>
+          Creme de abóbora com toque de gengibre e finalização com creme de leite fresco.
+        </Text>
+        <Text style={styles.dishPrice}>R$ 55,00</Text>
+        <View style={styles.actionsRow}>
+          <View style={styles.buttonAndCart}>
+            <TouchableOpacity style={styles.dishButton}>
+              <Text style={styles.dishButtonText}>Até 1 pessoa</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
+    </View>
+  </>
+)}
+
+{selectedCategory === 'Prato Principal' && (
+  <>
+    {/* Prato 1 */}
+    <View style={styles.dishItem}>
+      <Image source={require('./assets/images/p1.jpg')} style={styles.dishImage} />
+      <View style={styles.dishInfo}>
+        <Text style={styles.dishTitle}>Filé Mignon ao Vinho</Text>
+        <Text style={styles.dishDescription}>
+          Filé mignon grelhado, servido com molho de vinho tinto, purê de batata trufado e legumes assados.
+        </Text>
+        <Text style={styles.dishPrice}>R$ 165,00</Text>
+        <View style={styles.actionsRow}>
+          <View style={styles.buttonAndCart}>
+            <TouchableOpacity style={styles.dishButton}>
+              <Text style={styles.dishButtonText}>Até 2 pessoas</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
+    </View>
+
+    {/* Prato 2 */}
+    <View style={styles.dishItem}>
+      <Image source={require('./assets/images/p2.jpg')} style={styles.dishImage} />
+      <View style={styles.dishInfo}>
+        <Text style={styles.dishTitle}>Risoto de Frutos do Mar</Text>
+        <Text style={styles.dishDescription}>
+          Risoto cremoso com camarões, mexilhões e polvo, finalizado com um toque de limão siciliano.
+        </Text>
+        <Text style={styles.dishPrice}>R$ 148,00</Text>
+        <View style={styles.actionsRow}>
+          <View style={styles.buttonAndCart}>
+            <TouchableOpacity style={styles.dishButton}>
+              <Text style={styles.dishButtonText}>Até 2 pessoas</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
+    </View>
+
+    {/* Prato 3 */}
+    <View style={styles.dishItem}>
+      <Image source={require('./assets/images/p3.jpg')} style={styles.dishImage} />
+      <View style={styles.dishInfo}>
+        <Text style={styles.dishTitle}>Picanha de Cordeiro</Text>
+        <Text style={styles.dishDescription}>
+          Corte de picanha de cordeiro grelhado, com molho de hortelã e couscous marroquino.
+        </Text>
+        <Text style={styles.dishPrice}>R$ 172,00</Text>
+        <View style={styles.actionsRow}>
+          <View style={styles.buttonAndCart}>
+            <TouchableOpacity style={styles.dishButton}>
+              <Text style={styles.dishButtonText}>Até 2 pessoas</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
+    </View>
+
+    {/* Prato 4 */}
+    <View style={styles.dishItem}>
+      <Image source={require('./assets/images/p4.jpg')} style={styles.dishImage} />
+      <View style={styles.dishInfo}>
+        <Text style={styles.dishTitle}>Pescada Amarela ao Molho de Alho</Text>
+        <Text style={styles.dishDescription}>
+          Pescada amarela grelhada, servida com molho de alho e batatas assadas.
+        </Text>
+        <Text style={styles.dishPrice}>R$ 139,00</Text>
+        <View style={styles.actionsRow}>
+          <View style={styles.buttonAndCart}>
+            <TouchableOpacity style={styles.dishButton}>
+              <Text style={styles.dishButtonText}>Até 1 pessoa</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
+    </View>
+
+    {/* Prato 5 */}
+    <View style={styles.dishItem}>
+      <Image source={require('./assets/images/p5.jpg')} style={styles.dishImage} />
+      <View style={styles.dishInfo}>
+        <Text style={styles.dishTitle}>Tagliatelle Trufado</Text>
+        <Text style={styles.dishDescription}>
+          Massa fresca de tagliatelle, com molho cremoso de trufas negras e parmesão.
+        </Text>
+        <Text style={styles.dishPrice}>R$ 128,00</Text>
+        <View style={styles.actionsRow}>
+          <View style={styles.buttonAndCart}>
+            <TouchableOpacity style={styles.dishButton}>
+              <Text style={styles.dishButtonText}>Até 1 pessoa</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
+    </View>
+
+    {/* Prato 6 */}
+    <View style={styles.dishItem}>
+      <Image source={require('./assets/images/p6.jpg')} style={styles.dishImage} />
+      <View style={styles.dishInfo}>
+        <Text style={styles.dishTitle}>Linguine com Lagosta</Text>
+        <Text style={styles.dishDescription}>
+          Linguine fresco servido com lagosta, azeite de oliva e toque de pimenta rosa.
+        </Text>
+        <Text style={styles.dishPrice}>R$ 196,00</Text>
+        <View style={styles.actionsRow}>
+          <View style={styles.buttonAndCart}>
+            <TouchableOpacity style={styles.dishButton}>
+              <Text style={styles.dishButtonText}>Até 2 pessoas</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
+    </View>
+
+    {/* Prato 7 */}
+    <View style={styles.dishItem}>
+      <Image source={require('./assets/images/p7.jpg')} style={styles.dishImage} />
+      <View style={styles.dishInfo}>
+        <Text style={styles.dishTitle}>Frango Assado ao Mel e Alecrim</Text>
+        <Text style={styles.dishDescription}>
+          Peito de frango assado, com molho de mel e alecrim, acompanhado de batatas rústicas.
+        </Text>
+        <Text style={styles.dishPrice}>R$ 118,00</Text>
+        <View style={styles.actionsRow}>
+          <View style={styles.buttonAndCart}>
+            <TouchableOpacity style={styles.dishButton}>
+              <Text style={styles.dishButtonText}>Até 1 pessoa</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
+    </View>
+
+    {/* Prato 8 */}
+    <View style={styles.dishItem}>
+      <Image source={require('./assets/images/p8.jpg')} style={styles.dishImage} />
+      <View style={styles.dishInfo}>
+        <Text style={styles.dishTitle}>Tomahawk Steak</Text>
+        <Text style={styles.dishDescription}>
+          Corte premium de tomahawk steak grelhado, acompanhado de molho barbecue caseiro e legumes grelhados.
+        </Text>
+        <Text style={styles.dishPrice}>R$ 245,00</Text>
+        <View style={styles.actionsRow}>
+          <View style={styles.buttonAndCart}>
+            <TouchableOpacity style={styles.dishButton}>
+              <Text style={styles.dishButtonText}>Até 3 pessoas</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
+    </View>
+
+    {/* Prato 9 */}
+    <View style={styles.dishItem}>
+      <Image source={require('./assets/images/p9.jpg')} style={styles.dishImage} />
+      <View style={styles.dishInfo}>
+        <Text style={styles.dishTitle}>Salmão Grelhado</Text>
+        <Text style={styles.dishDescription}>
+          Salmão fresco grelhado, servido com molho de limão e mostarda, acompanhado de arroz basmati e brócolis ao vapor.
+        </Text>
+        <Text style={styles.dishPrice}>R$ 142,00</Text>
+        <View style={styles.actionsRow}>
+          <View style={styles.buttonAndCart}>
+            <TouchableOpacity style={styles.dishButton}>
+              <Text style={styles.dishButtonText}>Até 1 pessoa</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
+    </View>
+  </>
+)}
+
+{selectedCategory === 'Sobremesas' && (
+  <>
+    {/* Sobremesa 1 */}
+    <View style={styles.dishItem}>
+      <Image source={require('./assets/images/s1.jpg')} style={styles.dishImage} />
+      <View style={styles.dishInfo}>
+        <Text style={styles.dishTitle}>Tiramisù D’Oro</Text>
+        <Text style={styles.dishDescription}>
+          Clássico tiramisù com camadas de mascarpone e café espresso.
+        </Text>
+        <Text style={styles.dishPrice}>R$ 42,00</Text>
+        <View style={styles.actionsRow}>
+          <View style={styles.buttonAndCart}>
+            <TouchableOpacity style={styles.dishButton}>
+              <Text style={styles.dishButtonText}>Individual</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
+    </View>
+
+    {/* Sobremesa 2 */}
+    <View style={styles.dishItem}>
+      <Image source={require('./assets/images/s2.jpg')} style={styles.dishImage} />
+      <View style={styles.dishInfo}>
+        <Text style={styles.dishTitle}>Mousse Noir</Text>
+        <Text style={styles.dishDescription}>
+          Mousse de chocolate belga com toque de baunilha de Madagascar.
+        </Text>
+        <Text style={styles.dishPrice}>R$ 36,00</Text>
+        <View style={styles.actionsRow}>
+          <View style={styles.buttonAndCart}>
+            <TouchableOpacity style={styles.dishButton}>
+              <Text style={styles.dishButtonText}>Individual</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
+    </View>
+
+    {/* Sobremesa 3 */}
+    <View style={styles.dishItem}>
+      <Image source={require('./assets/images/s3.jpg')} style={styles.dishImage} />
+      <View style={styles.dishInfo}>
+        <Text style={styles.dishTitle}>Cheesecake du Château</Text>
+        <Text style={styles.dishDescription}>
+          Cheesecake cremoso com calda de frutas vermelhas frescas.
+        </Text>
+        <Text style={styles.dishPrice}>R$ 39,00</Text>
+        <View style={styles.actionsRow}>
+          <View style={styles.buttonAndCart}>
+            <TouchableOpacity style={styles.dishButton}>
+              <Text style={styles.dishButtonText}>Individual</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
+    </View>
+
+    {/* Sobremesa 4 */}
+    <View style={styles.dishItem}>
+      <Image source={require('./assets/images/s4.jpg')} style={styles.dishImage} />
+      <View style={styles.dishInfo}>
+        <Text style={styles.dishTitle}>Pavlova Étoile</Text>
+        <Text style={styles.dishDescription}>
+          Merengue crocante com chantilly e seleção de frutas tropicais.
+        </Text>
+        <Text style={styles.dishPrice}>R$ 44,00</Text>
+        <View style={styles.actionsRow}>
+          <View style={styles.buttonAndCart}>
+            <TouchableOpacity style={styles.dishButton}>
+              <Text style={styles.dishButtonText}>Individual</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
+    </View>
+
+    {/* Sobremesa 5 */}
+    <View style={styles.dishItem}>
+      <Image source={require('./assets/images/s5.jpg')} style={styles.dishImage} />
+      <View style={styles.dishInfo}>
+        <Text style={styles.dishTitle}>Petit Gâteau</Text>
+        <Text style={styles.dishDescription}>
+          Bolo de chocolate quente com recheio cremoso e sorvete artesanal.
+        </Text>
+        <Text style={styles.dishPrice}>R$ 41,00</Text>
+        <View style={styles.actionsRow}>
+          <View style={styles.buttonAndCart}>
+            <TouchableOpacity style={styles.dishButton}>
+              <Text style={styles.dishButtonText}>Individual</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
+    </View>
+
+    {/* Sobremesa 6 */}
+    <View style={styles.dishItem}>
+      <Image source={require('./assets/images/s6.jpg')} style={styles.dishImage} />
+      <View style={styles.dishInfo}>
+        <Text style={styles.dishTitle}>Crème Brûlée Dourado</Text>
+        <Text style={styles.dishDescription}>
+          Creme de baunilha com cobertura caramelizada na hora.
+        </Text>
+        <Text style={styles.dishPrice}>R$ 38,00</Text>
+        <View style={styles.actionsRow}>
+          <View style={styles.buttonAndCart}>
+            <TouchableOpacity style={styles.dishButton}>
+              <Text style={styles.dishButtonText}>Individual</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
+    </View>
+
+    {/* Sobremesa 7 */}
+    <View style={styles.dishItem}>
+      <Image source={require('./assets/images/s7.jpg')} style={styles.dishImage} />
+      <View style={styles.dishInfo}>
+        <Text style={styles.dishTitle}>Torta Banoffee</Text>
+        <Text style={styles.dishDescription}>
+          Torta de banana, doce de leite e chantilly caseiro.
+        </Text>
+        <Text style={styles.dishPrice}>R$ 40,00</Text>
+        <View style={styles.actionsRow}>
+          <View style={styles.buttonAndCart}>
+            <TouchableOpacity style={styles.dishButton}>
+              <Text style={styles.dishButtonText}>Individual</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
+    </View>
+
+    {/* Sobremesa 8 */}
+    <View style={styles.dishItem}>
+      <Image source={require('./assets/images/s8.jpg')} style={styles.dishImage} />
+      <View style={styles.dishInfo}>
+        <Text style={styles.dishTitle}>Panna Cotta Perla</Text>
+        <Text style={styles.dishDescription}>
+          Panna cotta de baunilha com calda de frutas silvestres.
+        </Text>
+        <Text style={styles.dishPrice}>R$ 37,00</Text>
+        <View style={styles.actionsRow}>
+          <View style={styles.buttonAndCart}>
+            <TouchableOpacity style={styles.dishButton}>
+              <Text style={styles.dishButtonText}>Individual</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
+    </View>
+
+    {/* Sobremesa 9 */}
+    <View style={styles.dishItem}>
+      <Image source={require('./assets/images/s9.jpg')} style={styles.dishImage} />
+      <View style={styles.dishInfo}>
+        <Text style={styles.dishTitle}>Mousse de Framboesas</Text>
+        <Text style={styles.dishDescription}>
+          Mousse de chocolate amargo, com framboesas frescas e uma leve calda de frutas vermelhas.
+        </Text>
+        <Text style={styles.dishPrice}>R$ 39,00</Text>
+        <View style={styles.actionsRow}>
+          <View style={styles.buttonAndCart}>
+            <TouchableOpacity style={styles.dishButton}>
+              <Text style={styles.dishButtonText}>Individual</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image source={require('./assets/images/carrinho.png')} style={styles.cartIconLarge} />
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
+    </View>
+  </>
+)}
+
+
+
 </ScrollView>
-
 
     
      {/* MENU INFERIOR FIXO */}
@@ -918,11 +1419,23 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     borderRadius: 8,
   },
-  
+  cartIconLarge: {
+    width: 26,
+    height: 26,
+    resizeMode: 'contain',
+    marginLeft: 8,
+  },
+
+  buttonAndCart: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 5,
+  },
+
   
   // carrinho icon
   cartIconLarge: {
-    width: 26,
+    width: 2,
     height: 26,
     resizeMode: 'contain',
     marginLeft: 8,
